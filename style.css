@@ -94,12 +94,20 @@ button {
 
 /* Nabvar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  transition: var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar-dark {
+  background-color: var(--color-pink);
+  padding: 8px;
 }
 
 /* #navbar img {
@@ -123,10 +131,10 @@ button {
   cursor: pointer;
   border-radius: var(--size-border-radius);
 }
-/* 
+
 .navbar_menu_item.active {
   border: 1px solid var(--color-white);
-} */
+}
 
 .navbar_menu_item:hover {
   background-color: var(--color-dark-pink);
@@ -144,6 +152,7 @@ button {
 #home {
   background: url("./imgs/home-background.png") center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
