@@ -11,7 +11,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// navbar menu 클릭 시 해당 섹션 이동
+// navbar menu Click 해당 섹션 이동
 const navbarMenu = document.querySelector(".navbar_menu");
 navbarMenu.addEventListener("click", (e) => {
   const target = e.target;
@@ -33,6 +33,21 @@ const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
   console.log(1 - window.scrollY / homeHeight);
   home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+//show "arrow up " button scrolling
+const arrowUp = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+// Handle Click "arrow up" button
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
 });
 
 function scrollIntoView(selector) {
