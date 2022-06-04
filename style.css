@@ -99,7 +99,6 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-white);
   padding: 16px;
   background-color: transparent;
   transition: var(--animation-duration) ease-in-out;
@@ -133,6 +132,10 @@ button {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
+}
+
+.navbar_menu_item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar_menu_item:hover {
@@ -176,6 +179,10 @@ button {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+.home_contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* Section common */
@@ -304,6 +311,7 @@ button {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category_btn.selected,
@@ -326,11 +334,11 @@ button {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
-  transition: all var(--animation-duration);
+  transition: all var(--animation-duration) ease-in;
 }
 
 .work_projects {
@@ -350,6 +358,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 280px;
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
@@ -363,6 +372,7 @@ button {
 .project_img {
   max-width: 100%;
   max-height: 100%;
+  align-self: center;
 }
 .project_description {
   display: flex;
@@ -376,7 +386,7 @@ button {
   left: 0;
   opacity: 0;
   transform: translateY(10px);
-  transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .project:hover .project_description {
@@ -417,7 +427,7 @@ button {
 .contact_links {
   font-size: var(--font-large);
   margin: 24px 0;
-  transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .contact_links i:hover {
@@ -438,7 +448,7 @@ button {
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 300ms ease;
+  transition: opacity 300ms ease-in;
 }
 
 .arrow-up.visible {
@@ -448,8 +458,19 @@ button {
 
 /* 768px screen */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar_toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -470,18 +491,36 @@ button {
   .navbar_menu.open {
     display: block;
   }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
   .about_majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
-
+  .category_btn {
+    margin: 4px 0;
+    width: 50%;
+  }
   .project {
     flex-grow: 1;
+  }
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
