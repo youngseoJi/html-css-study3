@@ -1,2 +1,1 @@
-# portfolio
-ys's portfolio
+# html,css 연습
